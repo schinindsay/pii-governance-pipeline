@@ -1,0 +1,56 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Local DuckDB databases and temporary files
+*.duckdb
+*.duckdb.wal
+*.db
+*.db.wal
+
+# Dagster local runtime state
+.dagster/
+dagster_home/
+dagster_storage/
+
+# Test coverage
+.coverage
+.coverage.*
+htmlcov/
+
+# macOS
+.DS_Store
+
+# Editor files
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Logs
+*.log
+
+.tmp*
+
+
+# Local agent instructions
+/AGENT.md
+/AGENTS.md
+scratch/*

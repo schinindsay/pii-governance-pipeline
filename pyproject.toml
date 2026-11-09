@@ -1,0 +1,40 @@
+[project]
+name = "digital-envoy-sample"
+version = "0.1.0"
+description = "A Dagster-based data platform with modular data engineering workflows"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dagster>=1.13.29",
+    "dagster-webserver>=1.13.29",
+    "duckdb>=2.0.0",
+    "PyGithub>=2.5.0",
+    "PyYAML>=6.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.4,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "data_platform"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "ruff>=0.17.4",
+]
+
+[tool.dagster]
+module_name = "data_platform.orchestration.definitions"
+code_location_name = "data_platform"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
